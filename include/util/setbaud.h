@@ -29,7 +29,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: setbaud.h 2424 2014-04-29 13:08:15Z pitchumani $ */
+/* $Id$ */
 
 /**
    \file

@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotnx5.h 2460 2014-12-03 05:39:25Z pitchumani $ */
+/* $Id: iotnx5.h 2269 2011-12-29 08:07:25Z joerg_wunsch $ */
 
 /* avr/iotnx5.h - definitions for ATtiny25, ATtiny45 and ATtiny85 */
 

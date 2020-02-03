@@ -29,7 +29,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: inttypes.h 2302 2012-11-26 10:52:01Z joerg_wunsch $ */
+/* $Id$ */
 
 #ifndef __INTTYPES_H_
 #define __INTTYPES_H_

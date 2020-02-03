@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iom1280.h 2456 2014-11-19 09:57:29Z saaadhu $ */
+/* $Id: iom1280.h 2102 2010-03-16 22:52:39Z joerg_wunsch $ */
 
 /* avr/iom1280.h - definitions for ATmega1280 */
 
@@ -91,13 +91,11 @@
 #define SIGNATURE_1 0x97
 #define SIGNATURE_2 0x03
 
-
 #define SLEEP_MODE_IDLE (0x00<<1)
 #define SLEEP_MODE_ADC (0x01<<1)
 #define SLEEP_MODE_PWR_DOWN (0x02<<1)
 #define SLEEP_MODE_PWR_SAVE (0x03<<1)
 #define SLEEP_MODE_STANDBY (0x06<<1)
 #define SLEEP_MODE_EXT_STANDBY (0x07<<1)
-
 
 #endif /* _AVR_IOM1280_H_ */

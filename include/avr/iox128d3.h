@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iox128d3.h 2482 2015-08-06 08:54:17Z pitchumani $ */
+/* $Id: iox128d3.h 2194 2010-11-16 15:10:51Z arcanum $ */
 
 /* avr/iox128d3.h - definitions for ATxmega128D3 */
 
@@ -886,12 +886,13 @@ typedef enum SUT_enum
 typedef enum BODLVL_enum
 {
     BODLVL_1V6_gc = (0x07<<0),  /* 1.6 V */
-    BODLVL_1V9_gc = (0x06<<0),  /* 1.8 V */
-    BODLVL_2V1_gc = (0x05<<0),  /* 2.0 V */
-    BODLVL_2V4_gc = (0x04<<0),  /* 2.2 V */
-    BODLVL_2V6_gc = (0x03<<0),  /* 2.4 V */
-    BODLVL_2V9_gc = (0x02<<0),  /* 2.7 V */
-    BODLVL_3V2_gc = (0x01<<0),  /* 2.9 V */
+    BODLVL_1V8_gc = (0x06<<0),  /* 1.8 V */
+    BODLVL_2V0_gc = (0x05<<0),  /* 2.0 V */
+    BODLVL_2V2_gc = (0x04<<0),  /* 2.2 V */
+    BODLVL_2V4_gc = (0x03<<0),  /* 2.4 V */
+    BODLVL_2V6_gc = (0x02<<0),  /* 2.6 V */
+    BODLVL_2V8_gc = (0x01<<0),  /* 2.8 V */
+    BODLVL_3V0_gc = (0x00<<0),  /* 3.0 V */
 } BODLVL_t;
 
 
@@ -2475,13 +2476,13 @@ IO Module Instances. Mapped to memory.
 
 /* TWIC - Two-Wire Interface C */
 #define TWIC_CTRL  _SFR_MEM8(0x0480)
-#define TWIC_MASTER_CTRLA  _SFR_MEM8(0x0482)
-#define TWIC_MASTER_CTRLB  _SFR_MEM8(0x0483)
-#define TWIC_MASTER_CTRLC  _SFR_MEM8(0x0484)
-#define TWIC_MASTER_STATUS  _SFR_MEM8(0x0485)
-#define TWIC_MASTER_BAUD  _SFR_MEM8(0x0486)
-#define TWIC_MASTER_ADDR  _SFR_MEM8(0x0487)
-#define TWIC_MASTER_DATA  _SFR_MEM8(0x0488)
+#define TWIC_MASTER_CTRLA  _SFR_MEM8(0x0481)
+#define TWIC_MASTER_CTRLB  _SFR_MEM8(0x0482)
+#define TWIC_MASTER_CTRLC  _SFR_MEM8(0x0483)
+#define TWIC_MASTER_STATUS  _SFR_MEM8(0x0484)
+#define TWIC_MASTER_BAUD  _SFR_MEM8(0x0485)
+#define TWIC_MASTER_ADDR  _SFR_MEM8(0x0486)
+#define TWIC_MASTER_DATA  _SFR_MEM8(0x0487)
 #define TWIC_SLAVE_CTRLA  _SFR_MEM8(0x0488)
 #define TWIC_SLAVE_CTRLB  _SFR_MEM8(0x0489)
 #define TWIC_SLAVE_STATUS  _SFR_MEM8(0x048A)

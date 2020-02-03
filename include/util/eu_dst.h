@@ -26,7 +26,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* $Id: eu_dst.h 2492 2015-10-27 09:07:56Z swfltek $ */
+/* $Id$ */
 
 /**
     Daylight Saving function for the European Union. To utilize this function, you must

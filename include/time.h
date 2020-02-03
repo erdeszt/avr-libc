@@ -26,7 +26,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* $Id: time.h 2503 2016-02-07 22:59:47Z joerg_wunsch $ */
+/* $Id$ */
 
 /** \file */
 

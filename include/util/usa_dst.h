@@ -26,7 +26,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* $Id: usa_dst.h 2344 2013-04-10 19:52:09Z swfltek $ */
+/* $Id$ */
 
 /**
     Daylight Saving function for the USA. To utilize this function, you must

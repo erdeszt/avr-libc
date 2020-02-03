@@ -1,6 +1,6 @@
 /*****************************************************************************
  *
- * Copyright (C) 2014 Atmel Corporation
+ * Copyright (C) 2016 Atmel Corporation
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -31,8 +31,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  ****************************************************************************/
 
-
-/* $Id: iox128d4.h 2460 2014-12-03 05:39:25Z pitchumani $ */
 
 #ifndef _AVR_IO_H_
 #  error "Include <avr/io.h> instead of this file."
@@ -259,13 +257,12 @@ typedef enum SLEEP_SMODE_enum
 } SLEEP_SMODE_t;
 
 
+
 #define SLEEP_MODE_IDLE (0x00<<1)
 #define SLEEP_MODE_PWR_DOWN (0x02<<1)
 #define SLEEP_MODE_PWR_SAVE (0x03<<1)
 #define SLEEP_MODE_STANDBY (0x06<<1)
 #define SLEEP_MODE_EXT_STANDBY (0x07<<1)
-
-
 /*
 --------------------------------------------------------------------------
 OSC - Oscillator
@@ -772,7 +769,7 @@ typedef struct NVM_struct
     register8_t INTCTRL;  /* Interrupt Control */
     register8_t reserved_0x0E;
     register8_t STATUS;  /* Status */
-    register8_t LOCKBITS;  /* Lock Bits */
+    register8_t LOCK_BITS;  /* Lock Bits (Changed from LOCKBITS to avoid avr-libc collision) */
 } NVM_t;
 
 /* NVM Command */
@@ -1310,7 +1307,7 @@ typedef enum TWI_SLAVE_CMD_enum
 
 /*
 --------------------------------------------------------------------------
-PORT - I/O Port Configuration
+PORT - Port Configuration
 --------------------------------------------------------------------------
 */
 
@@ -1331,7 +1328,7 @@ typedef struct PORT_struct
     register8_t INT1MASK;  /* Port Interrupt 1 Mask */
     register8_t INTFLAGS;  /* Interrupt Flag Register */
     register8_t reserved_0x0D;
-    register8_t REMAP;  /* I/O Port Pin Remap Register */
+    register8_t REMAP;  /* Pin Remap Register (available for PORTC to PORTF only) */
     register8_t reserved_0x0F;
     register8_t PIN0CTRL;  /* Pin 0 Control Register */
     register8_t PIN1CTRL;  /* Pin 1 Control Register */
@@ -2073,7 +2070,7 @@ typedef enum SUT_enum
     SUT_64MS_gc = (0x00<<2),  /* 64 ms */
 } SUT_t;
 
-/* Brown Out Detection Voltage Level */
+/* Brownout Detection Voltage Level */
 typedef enum BODLVL_enum
 {
     BODLVL_1V6_gc = (0x07<<0),  /* 1.6 V */
@@ -2096,7 +2093,7 @@ LOCKBIT - Fuses and Lockbits
 /* Lock Bits */
 typedef struct NVM_LOCKBITS_struct
 {
-    register8_t LOCKBITS;  /* Lock Bits */
+    register8_t LOCK_BITS;  /* Lock Bits (Changed from LOCKBITS to avoid avr-libc collision) */
 } NVM_LOCKBITS_t;
 
 /* Boot lock bits - boot setcion */
@@ -4127,7 +4124,14 @@ IO Module Instances. Mapped to memory.
 #define TWI_EDIEN_bm  0x01  /* External Driver Interface Enable bit mask. */
 #define TWI_EDIEN_bp  0  /* External Driver Interface Enable bit position. */
 
-/* PORT - I/O Port Configuration */
+/* PORT - Port Configuration */
+/* VPORT.INTFLAGS  bit masks and bit positions */
+/* VPORT_INT1IF  Predefined. */
+/* VPORT_INT1IF  Predefined. */
+
+/* VPORT_INT0IF  Predefined. */
+/* VPORT_INT0IF  Predefined. */
+
 /* PORT.INTCTRL  bit masks and bit positions */
 #define PORT_INT1LVL_gm  0x0C  /* Port Interrupt 1 Level group mask. */
 #define PORT_INT1LVL_gp  2  /* Port Interrupt 1 Level group position. */
@@ -4151,11 +4155,11 @@ IO Module Instances. Mapped to memory.
 #define PORT_INT0IF_bp  0  /* Port Interrupt 0 Flag bit position. */
 
 /* PORT.REMAP  bit masks and bit positions */
-#define PORT_SPI_bm  0x20  /* SPI bit mask. */
-#define PORT_SPI_bp  5  /* SPI bit position. */
+#define PORT_SPI_bm  0x20  /* SPI Remap bit mask. */
+#define PORT_SPI_bp  5  /* SPI Remap bit position. */
 
-#define PORT_USART0_bm  0x10  /* USART0 bit mask. */
-#define PORT_USART0_bp  4  /* USART0 bit position. */
+#define PORT_USART0_bm  0x10  /* USART0 Remap bit mask. */
+#define PORT_USART0_bp  4  /* USART0 Remap bit position. */
 
 #define PORT_TC0D_bm  0x08  /* Timer/Counter 0 Output Compare D bit mask. */
 #define PORT_TC0D_bp  3  /* Timer/Counter 0 Output Compare D bit position. */
@@ -5088,14 +5092,14 @@ IO Module Instances. Mapped to memory.
 #define NVM_FUSES_EESAVE_bm  0x08  /* Preserve EEPROM Through Chip Erase bit mask. */
 #define NVM_FUSES_EESAVE_bp  3  /* Preserve EEPROM Through Chip Erase bit position. */
 
-#define NVM_FUSES_BODLVL_gm  0x07  /* Brown Out Detection Voltage Level group mask. */
-#define NVM_FUSES_BODLVL_gp  0  /* Brown Out Detection Voltage Level group position. */
-#define NVM_FUSES_BODLVL0_bm  (1<<0)  /* Brown Out Detection Voltage Level bit 0 mask. */
-#define NVM_FUSES_BODLVL0_bp  0  /* Brown Out Detection Voltage Level bit 0 position. */
-#define NVM_FUSES_BODLVL1_bm  (1<<1)  /* Brown Out Detection Voltage Level bit 1 mask. */
-#define NVM_FUSES_BODLVL1_bp  1  /* Brown Out Detection Voltage Level bit 1 position. */
-#define NVM_FUSES_BODLVL2_bm  (1<<2)  /* Brown Out Detection Voltage Level bit 2 mask. */
-#define NVM_FUSES_BODLVL2_bp  2  /* Brown Out Detection Voltage Level bit 2 position. */
+#define NVM_FUSES_BODLVL_gm  0x07  /* Brownout Detection Voltage Level group mask. */
+#define NVM_FUSES_BODLVL_gp  0  /* Brownout Detection Voltage Level group position. */
+#define NVM_FUSES_BODLVL0_bm  (1<<0)  /* Brownout Detection Voltage Level bit 0 mask. */
+#define NVM_FUSES_BODLVL0_bp  0  /* Brownout Detection Voltage Level bit 0 position. */
+#define NVM_FUSES_BODLVL1_bm  (1<<1)  /* Brownout Detection Voltage Level bit 1 mask. */
+#define NVM_FUSES_BODLVL1_bp  1  /* Brownout Detection Voltage Level bit 1 position. */
+#define NVM_FUSES_BODLVL2_bm  (1<<2)  /* Brownout Detection Voltage Level bit 2 mask. */
+#define NVM_FUSES_BODLVL2_bp  2  /* Brownout Detection Voltage Level bit 2 position. */
 
 /* LOCKBIT - Fuses and Lockbits */
 /* NVM_LOCKBITS.LOCKBITS  bit masks and bit positions */
@@ -5496,9 +5500,9 @@ IO Module Instances. Mapped to memory.
 #define FUSE4_DEFAULT  (0xFF)
 
 /* Fuse Byte 5 */
-#define FUSE_BODLVL0  (unsigned char)~_BV(0)  /* Brown Out Detection Voltage Level Bit 0 */
-#define FUSE_BODLVL1  (unsigned char)~_BV(1)  /* Brown Out Detection Voltage Level Bit 1 */
-#define FUSE_BODLVL2  (unsigned char)~_BV(2)  /* Brown Out Detection Voltage Level Bit 2 */
+#define FUSE_BODLVL0  (unsigned char)~_BV(0)  /* Brownout Detection Voltage Level Bit 0 */
+#define FUSE_BODLVL1  (unsigned char)~_BV(1)  /* Brownout Detection Voltage Level Bit 1 */
+#define FUSE_BODLVL2  (unsigned char)~_BV(2)  /* Brownout Detection Voltage Level Bit 2 */
 #define FUSE_EESAVE  (unsigned char)~_BV(3)  /* Preserve EEPROM Through Chip Erase */
 #define FUSE_BODACT0  (unsigned char)~_BV(4)  /* BOD Operation in Active Mode Bit 0 */
 #define FUSE_BODACT1  (unsigned char)~_BV(5)  /* BOD Operation in Active Mode Bit 1 */

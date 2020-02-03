@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn2313a.h 2460 2014-12-03 05:39:25Z pitchumani $ */
+/* $Id: iotn2313a.h 2412 2014-03-20 11:21:20Z pitchumani $ */
 
 /* avr/iotn2313a.h - definitions for ATtiny2313A */
 
@@ -803,7 +803,6 @@
 #define SCL_PORT  PORTB
 #define SCL_PIN   PINB
 #define SCL_BIT   7
-
 
 #define SLEEP_MODE_IDLE (0x00<<4)
 #define SLEEP_MODE_STANDBY (0x04<<4)

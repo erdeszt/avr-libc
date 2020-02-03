@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iox16d4.h 2482 2015-08-06 08:54:17Z pitchumani $ */
+/* $Id: iox16d4.h 2200 2010-12-14 04:24:24Z arcanum $ */
 
 /* avr/iox16d4.h - definitions for ATxmega16D4 */
 
@@ -900,12 +900,13 @@ typedef enum SUT_enum
 typedef enum BODLVL_enum
 {
     BODLVL_1V6_gc = (0x07<<0),  /* 1.6 V */
-    BODLVL_1V9_gc = (0x06<<0),  /* 1.8 V */
-    BODLVL_2V1_gc = (0x05<<0),  /* 2.0 V */
-    BODLVL_2V4_gc = (0x04<<0),  /* 2.2 V */
-    BODLVL_2V6_gc = (0x03<<0),  /* 2.4 V */
-    BODLVL_2V9_gc = (0x02<<0),  /* 2.7 V */
-    BODLVL_3V2_gc = (0x01<<0),  /* 2.9 V */
+    BODLVL_1V8_gc = (0x06<<0),  /* 1.8 V */
+    BODLVL_2V0_gc = (0x05<<0),  /* 2.0 V */
+    BODLVL_2V2_gc = (0x04<<0),  /* 2.2 V */
+    BODLVL_2V4_gc = (0x03<<0),  /* 2.4 V */
+    BODLVL_2V6_gc = (0x02<<0),  /* 2.6 V */
+    BODLVL_2V8_gc = (0x01<<0),  /* 2.8 V */
+    BODLVL_3V0_gc = (0x00<<0),  /* 3.0 V */
 } BODLVL_t;
 
 
@@ -1068,14 +1069,14 @@ typedef struct ADC_struct
 /* Positive input multiplexer selection */
 typedef enum ADC_CH_MUXPOS_enum
 {
-    ADC_CH_MUXPOS_PIN0_gc = (0x00<<3),  /* Input pin 0 */
-    ADC_CH_MUXPOS_PIN1_gc = (0x01<<3),  /* Input pin 1 */
-    ADC_CH_MUXPOS_PIN2_gc = (0x02<<3),  /* Input pin 2 */
-    ADC_CH_MUXPOS_PIN3_gc = (0x03<<3),  /* Input pin 3 */
-    ADC_CH_MUXPOS_PIN4_gc = (0x04<<3),  /* Input pin 4 */
-    ADC_CH_MUXPOS_PIN5_gc = (0x05<<3),  /* Input pin 5 */
-    ADC_CH_MUXPOS_PIN6_gc = (0x06<<3),  /* Input pin 6 */
-    ADC_CH_MUXPOS_PIN7_gc = (0x07<<3),  /* Input pin 7 */
+    ADC_CH_MUXPOS_PIN0_gc = (0x00<<3),   /* Input pin 0  */
+    ADC_CH_MUXPOS_PIN1_gc = (0x01<<3),   /* Input pin 1  */
+    ADC_CH_MUXPOS_PIN2_gc = (0x02<<3),   /* Input pin 2  */
+    ADC_CH_MUXPOS_PIN3_gc = (0x03<<3),   /* Input pin 3  */
+    ADC_CH_MUXPOS_PIN4_gc = (0x04<<3),   /* Input pin 4  */
+    ADC_CH_MUXPOS_PIN5_gc = (0x05<<3),   /* Input pin 5  */
+    ADC_CH_MUXPOS_PIN6_gc = (0x06<<3),   /* Input pin 6  */
+    ADC_CH_MUXPOS_PIN7_gc = (0x07<<3),   /* Input pin 7  */
 	ADC_CH_MUXPOS_PIN8_gc = (0x08<<3),   /* Input pin 8  */
 	ADC_CH_MUXPOS_PIN9_gc = (0x09<<3),   /* Input pin 9  */
 	ADC_CH_MUXPOS_PIN10_gc = (0x10<<3),  /* Input pin 10 */

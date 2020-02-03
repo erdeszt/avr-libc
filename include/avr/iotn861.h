@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn861.h 2456 2014-11-19 09:57:29Z saaadhu $ */
+/* $Id: iotn861.h 2115 2010-04-05 23:19:53Z arcanum $ */
 
 /* avr/iotn861.h - definitions for ATtiny861 */
 
@@ -86,11 +86,9 @@
 #define SIGNATURE_1 0x93
 #define SIGNATURE_2 0x0D
 
-
 #define SLEEP_MODE_IDLE (0x00<<3)
 #define SLEEP_MODE_ADC (0x01<<3)
 #define SLEEP_MODE_PWR_DOWN (0x02<<3)
 #define SLEEP_MODE_STANDBY (0x03<<3)
-
 
 #endif /* _AVR_IOTN861_H_ */

@@ -32,7 +32,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: math.h 2503 2016-02-07 22:59:47Z joerg_wunsch $ */
+/* $Id$ */
 
 /*
    math.h - mathematical functions

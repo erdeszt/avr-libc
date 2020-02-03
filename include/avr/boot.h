@@ -26,7 +26,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: boot.h 2503 2016-02-07 22:59:47Z joerg_wunsch $ */
+/* $Id$ */
 
 #ifndef _AVR_BOOT_H_
 #define _AVR_BOOT_H_    1

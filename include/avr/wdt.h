@@ -29,7 +29,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: wdt.h 2503 2016-02-07 22:59:47Z joerg_wunsch $ */
+/* $Id$ */
 
 /*
    avr/wdt.h - macros for AVR watchdog timer
@@ -137,6 +137,49 @@
 
 #if defined(__AVR_XMEGA__)
 
+#if defined (WDT_CTRLA) && !defined(RAMPD)
+
+#define wdt_enable(timeout) \
+do { \
+uint8_t temp; \
+__asm__ __volatile__ ( \
+	"wdr"									"\n\t" \
+	"out %[ccp_reg], %[ioreg_cen_mask]"		"\n\t" \
+	"lds %[tmp], %[wdt_reg]"				"\n\t" \
+	"sbr %[tmp], %[wdt_enable_timeout]"		"\n\t" \
+	"sts %[wdt_reg], %[tmp]"				"\n\t" \
+	"1:lds %[tmp], %[wdt_status_reg]"		"\n\t" \
+	"sbrc %[tmp], %[wdt_syncbusy_bit]"		"\n\t" \
+	"rjmp 1b"								"\n\t" \
+	: [tmp]					"=r" (temp) \
+	: [ccp_reg]				"I"  (_SFR_IO_ADDR(CCP)), \
+	  [ioreg_cen_mask]		"r"  ((uint8_t)CCP_IOREG_gc), \
+	  [wdt_reg]				"n"  (_SFR_MEM_ADDR(WDT_CTRLA)), \
+	  [wdt_enable_timeout]	"M"  (timeout), \
+	  [wdt_status_reg]		"n"  (_SFR_MEM_ADDR(WDT_STATUS)), \
+	  [wdt_syncbusy_bit]	"I"  (WDT_SYNCBUSY_bm) \
+); \
+} while(0)
+
+#define wdt_disable() \
+do { \
+uint8_t temp; \
+__asm__ __volatile__ (  \
+	"wdr"								"\n\t" \
+	"out %[ccp_reg], %[ioreg_cen_mask]" "\n\t" \
+	"lds %[tmp], %[wdt_reg]"			"\n\t" \
+	"cbr %[tmp], %[timeout_mask]"       "\n\t" \
+	"sts %[wdt_reg], %[tmp]"			"\n\t" \
+    : [tmp]            "=r" (temp) \
+    : [ccp_reg]        "I" (_SFR_IO_ADDR(CCP)),       \
+      [ioreg_cen_mask] "r" ((uint8_t)CCP_IOREG_gc),   \
+      [wdt_reg]        "n" (_SFR_MEM_ADDR(WDT_CTRLA)),\
+      [timeout_mask]   "I" (WDT_PERIOD_gm) \
+); \
+} while(0)
+
+#else // defined (WDT_CTRLA) && !defined(RAMPD)
+
 /*
    wdt_enable(timeout) for xmega devices
 ** write signature (CCP_IOREG_gc) that enables change of protected I/O
@@ -188,6 +231,8 @@ __asm__ __volatile__ (  \
       [disable_mask]      "r" ((uint8_t)((~WDT_ENABLE_bm) | WDT_CEN_bm)) \
     : "r0" \
 );
+
+#endif // defined (WDT_CTRLA) && !defined(RAMPD)
 
 #elif defined(__AVR_TINY__)
 
@@ -558,6 +603,10 @@ void wdt_disable (void)
     AT90USB82, AT90USB162,
     AT90USB646, AT90USB647, AT90USB1286, AT90USB1287,
     ATtiny48, ATtiny88.
+
+    Note: This value does <em>not</em> match the bit pattern of the
+    respective control register.  It is solely meant to be used together
+    with wdt_enable().
     */
 #define WDTO_4S     8
 
@@ -583,6 +632,10 @@ void wdt_disable (void)
     ATxmega16a4u, ATxmega32a4u,
     ATxmega16c4, ATxmega32c4,
     ATxmega128c3, ATxmega192c3, ATxmega256c3.
+
+    Note: This value does <em>not</em> match the bit pattern of the
+    respective control register.  It is solely meant to be used together
+    with wdt_enable().
     */
 #define WDTO_8S     9
 

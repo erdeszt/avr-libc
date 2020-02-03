@@ -2554,9 +2554,9 @@
 #define RAMSIZE      1024
 #define RAMEND       0x05FF
 #define E2START     0
-#define E2SIZE      2304
+#define E2SIZE      2176
 #define E2PAGESIZE  16
-#define E2END       0x08FF
+#define E2END       0x087F
 #define XRAMEND      RAMEND
 
 
@@ -2565,7 +2565,7 @@
 #define FUSE_MEMORY_SIZE 1
 
 /* Fuse Byte */
-#define FUSE_EXTCLKEN    (unsigned char)~_BV(0)
+#define FUSE_PCEE1       (unsigned char)~_BV(0)
 #define FUSE_EEACC       (unsigned char)~_BV(1)
 #define FUSE_BOOTRST     (unsigned char)~_BV(2)
 #define FUSE_EESAVE      (unsigned char)~_BV(3)

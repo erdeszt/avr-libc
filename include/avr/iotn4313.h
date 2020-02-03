@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn4313.h 2460 2014-12-03 05:39:25Z pitchumani $ */
+/* $Id: iotn4313.h 2412 2014-03-20 11:21:20Z pitchumani $ */
 
 /* avr/iotn4313.h - definitions for ATtiny4313 */
 

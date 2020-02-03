@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: lock.h 2503 2016-02-07 22:59:47Z joerg_wunsch $ */
+/* $Id$ */
 
 /* avr/lock.h - Lock Bits API */
 

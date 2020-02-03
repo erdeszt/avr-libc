@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iox256d3.h 2482 2015-08-06 08:54:17Z pitchumani $ */
+/* $Id: iox256d3.h 2162 2010-06-11 17:26:12Z arcanum $ */
 
 /* avr/iox256d3.h - definitions for ATxmega256D3 */
 
@@ -882,12 +882,13 @@ typedef enum SUT_enum
 typedef enum BODLVL_enum
 {
     BODLVL_1V6_gc = (0x07<<0),  /* 1.6 V */
-    BODLVL_1V9_gc = (0x06<<0),  /* 1.9 V */
-    BODLVL_2V1_gc = (0x05<<0),  /* 2.1 V */
-    BODLVL_2V4_gc = (0x04<<0),  /* 2.4 V */
-    BODLVL_2V6_gc = (0x03<<0),  /* 2.6 V */
-    BODLVL_2V9_gc = (0x02<<0),  /* 2.9 V */
-    BODLVL_3V2_gc = (0x01<<0),  /* 3.2 V */
+    BODLVL_1V8_gc = (0x06<<0),  /* 1.8 V */
+    BODLVL_2V0_gc = (0x05<<0),  /* 2.0 V */
+    BODLVL_2V2_gc = (0x04<<0),  /* 2.2 V */
+    BODLVL_2V4_gc = (0x03<<0),  /* 2.4 V */
+    BODLVL_2V6_gc = (0x02<<0),  /* 2.6 V */
+    BODLVL_2V8_gc = (0x01<<0),  /* 2.8 V */
+    BODLVL_3V0_gc = (0x00<<0),  /* 3.0 V */
 } BODLVL_t;
 
 
@@ -2994,31 +2995,31 @@ IO Module Instances. Mapped to memory.
 #define PR_TC0_bp  0  /* Port C Timer/Counter0 bit position. */
 
 /* PR.PRPD  bit masks and bit positions */
-/* PR_USART0_bm  Predefined. */
-/* PR_USART0_bp  Predefined. */
+/* PR_USART0  Predefined. */
+/* PR_USART0  Predefined. */
 
-/* PR_SPI_bm  Predefined. */
-/* PR_SPI_bp  Predefined. */
+/* PR_SPI  Predefined. */
+/* PR_SPI  Predefined. */
 
-/* PR_TC0_bm  Predefined. */
-/* PR_TC0_bp  Predefined. */
+/* PR_TC0  Predefined. */
+/* PR_TC0  Predefined. */
 
 /* PR.PRPE  bit masks and bit positions */
-/* PR_TWI_bm  Predefined. */
-/* PR_TWI_bp  Predefined. */
+/* PR_TWI  Predefined. */
+/* PR_TWI  Predefined. */
 
-/* PR_USART0_bm  Predefined. */
-/* PR_USART0_bp  Predefined. */
+/* PR_USART0  Predefined. */
+/* PR_USART0  Predefined. */
 
-/* PR_TC0_bm  Predefined. */
-/* PR_TC0_bp  Predefined. */
+/* PR_TC0  Predefined. */
+/* PR_TC0  Predefined. */
 
 /* PR.PRPF  bit masks and bit positions */
-/* PR_USART0_bm  Predefined. */
-/* PR_USART0_bp  Predefined. */
+/* PR_USART0  Predefined. */
+/* PR_USART0  Predefined. */
 
-/* PR_TC0_bm  Predefined. */
-/* PR_TC0_bp  Predefined. */
+/* PR_TC0  Predefined. */
+/* PR_TC0  Predefined. */
 
 /* SLEEP - Sleep Controller */
 /* SLEEP.CTRL  bit masks and bit positions */

@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotnx61.h 2460 2014-12-03 05:39:25Z pitchumani $ */
+/* $Id: iotnx61.h 2247 2011-05-23 19:39:56Z joerg_wunsch $ */
 
 /* avr/iotnx61.h - definitions for ATtiny261, ATtiny461 and ATtiny861 */
 

@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn24.h 2456 2014-11-19 09:57:29Z saaadhu $ */
+/* $Id: iotn24.h 2115 2010-04-05 23:19:53Z arcanum $ */
 
 /* avr/iotn24.h - definitions for ATtiny24 */
 
@@ -86,11 +86,9 @@
 #define SIGNATURE_1 0x91
 #define SIGNATURE_2 0x0B
 
-
 #define SLEEP_MODE_IDLE (0x00<<3)
 #define SLEEP_MODE_ADC (0x01<<3)
 #define SLEEP_MODE_PWR_DOWN (0x02<<3)
 #define SLEEP_MODE_STANDBY (0x03<<3)
-
 
 #endif /* _AVR_IOTN24_H_ */

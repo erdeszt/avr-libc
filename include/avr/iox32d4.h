@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iox32d4.h 2482 2015-08-06 08:54:17Z pitchumani $ */
+/* $Id: iox32d4.h 2200 2010-12-14 04:24:24Z arcanum $ */
 
 /* avr/iox32d4.h - definitions for ATxmega32D4 */
 
@@ -884,12 +884,13 @@ typedef enum SUT_enum
 typedef enum BODLVL_enum
 {
     BODLVL_1V6_gc = (0x07<<0),  /* 1.6 V */
-    BODLVL_1V9_gc = (0x06<<0),  /* 1.8 V */
-    BODLVL_2V1_gc = (0x05<<0),  /* 2.0 V */
-    BODLVL_2V4_gc = (0x04<<0),  /* 2.2 V */
-    BODLVL_2V6_gc = (0x03<<0),  /* 2.4 V */
-    BODLVL_2V9_gc = (0x02<<0),  /* 2.7 V */
-    BODLVL_3V2_gc = (0x01<<0),  /* 2.9 V */
+    BODLVL_1V8_gc = (0x06<<0),  /* 1.8 V */
+    BODLVL_2V0_gc = (0x05<<0),  /* 2.0 V */
+    BODLVL_2V2_gc = (0x04<<0),  /* 2.2 V */
+    BODLVL_2V4_gc = (0x03<<0),  /* 2.4 V */
+    BODLVL_2V6_gc = (0x02<<0),  /* 2.6 V */
+    BODLVL_2V8_gc = (0x01<<0),  /* 2.8 V */
+    BODLVL_3V0_gc = (0x00<<0),  /* 3.0 V */
 } BODLVL_t;
 
 /*

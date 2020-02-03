@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iom8hva.h 2456 2014-11-19 09:57:29Z saaadhu $ */
+/* $Id: iom8hva.h 2102 2010-03-16 22:52:39Z joerg_wunsch $ */
 
 /* iom8hva.h - definitions for ATmega8HVA.  */
 
@@ -65,7 +65,6 @@
 
 /* Lock Bits */
 #define __LOCK_BITS_EXIST
-
 
 
 #define SLEEP_MODE_IDLE (0x00<<1)

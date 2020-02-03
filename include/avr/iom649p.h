@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iom649p.h 2460 2014-12-03 05:39:25Z pitchumani $ */
+/* $Id: iom649p.h 2146 2010-06-09 06:38:54Z joerg_wunsch $ */
 
 /* avr/iom649p.h - definitions for ATmega649 */
 
@@ -1479,7 +1479,6 @@
 #define ADC0_PORT  PORTF
 #define ADC0_PIN   PINF
 #define ADC0_BIT   0
-
 
 #define SLEEP_MODE_IDLE (0x00<<1)
 #define SLEEP_MODE_ADC (0x01<<1)

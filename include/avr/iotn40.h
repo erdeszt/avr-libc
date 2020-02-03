@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn40.h 2460 2014-12-03 05:39:25Z pitchumani $ */
+/* $Id: iotn40.h 2435 2014-08-11 10:31:52Z joerg_wunsch $ */
 
 /* avr/iotn40.h - definitions for ATtiny40 */
 
@@ -757,7 +757,6 @@
 #define PCINT7_PORT  PORTADC
 #define PCINT7_PIN   PINADC
 #define PCINT7_BIT   ADC7
-
 
 #define SLEEP_MODE_IDLE (0x00<<1)
 #define SLEEP_MODE_ADC (0x01<<1)

@@ -28,7 +28,7 @@
   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   POSSIBILITY OF SUCH DAMAGE. */
 
-/* $Id: iotn85.h 2456 2014-11-19 09:57:29Z saaadhu $ */
+/* $Id: iotn85.h 2115 2010-04-05 23:19:53Z arcanum $ */
 
 /* avr/iotn85.h - definitions for ATtiny85 */
 
@@ -86,10 +86,8 @@
 #define SIGNATURE_1 0x93
 #define SIGNATURE_2 0x0B
 
-
 #define SLEEP_MODE_IDLE (0x00<<3)
 #define SLEEP_MODE_ADC (0x01<<3)
 #define SLEEP_MODE_PWR_DOWN (0x02<<3)
-
 
 #endif /* _AVR_IOTN85_H_ */
