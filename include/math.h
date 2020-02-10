@@ -155,7 +155,7 @@ extern double fmod(double __x, double __y) __ATTR_CONST__;
 
 /**
     The modf() function breaks the argument \a __x into integral and
-    fractional parts, each of which has the same sign as the argument. 
+    fractional parts, each of which has the same sign as the argument.
     It stores the integral part as a double in the object pointed to by
     \a __iptr.
 
@@ -352,6 +352,7 @@ __ATTR_CONST__ static inline int isfinite (double __x)
 }
 #define isfinitef isfinite	/**< The alias for isfinite().	*/
 
+#ifdef __FULL_LIBC__
 /**
     The copysign() function returns \a __x but with the sign of \a __y.
     They work even if \a __x or \a __y are NaN or zero.
@@ -366,6 +367,7 @@ __ATTR_CONST__ static inline double copysign (double __x, double __y)
     return __x;
 }
 #define copysignf copysign	/**< The alias for copysign().	*/
+#endif // __FULL_LIBC__
 
 /**
     The signbit() function returns a nonzero value if the value of \a __x

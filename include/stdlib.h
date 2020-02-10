@@ -246,7 +246,7 @@ extern long strtol(const char *__nptr, char **__endptr, int __base);
     or, if there was a leading minus sign, the negation of the result
     of the conversion, unless the original (non-negated) value would
     overflow; in the latter case, strtoul() returns ULONG_MAX, and \c
-    errno is set to \ref avr_errno "ERANGE".  If no conversion could 
+    errno is set to \ref avr_errno "ERANGE".  If no conversion could
     be performed, 0 is returned.
 */
 extern unsigned long strtoul(const char *__nptr, char **__endptr, int __base);
@@ -417,14 +417,14 @@ extern int rand_r(unsigned long *__ctx);
    number between 2 (binary conversion) and up to 36.  If \c radix
    is greater than 10, the next digit after \c '9' will be the letter
    \c 'a'.
-    
+
     If radix is 10 and val is negative, a minus sign will be prepended.
 
    The itoa() function returns the pointer passed as \c s.
 */
 #ifdef  __DOXYGEN__
 extern char *itoa(int val, char *s, int radix);
-#else
+#elif __FULL_LIBC__
 extern __inline__ __ATTR_GNU_INLINE__
 char *itoa (int __val, char *__s, int __radix)
 {
@@ -443,7 +443,7 @@ char *itoa (int __val, char *__s, int __radix)
 
 /**
  \ingroup avr_stdlib
- 
+
    \brief Convert a long integer to a string.
 
    The function ltoa() converts the long integer value from \c val into an
@@ -469,7 +469,7 @@ char *itoa (int __val, char *__s, int __radix)
 */
 #ifdef  __DOXYGEN__
 extern char *ltoa(long val, char *s, int radix);
-#else
+#elif __FULL_LIBC__
 extern __inline__ __ATTR_GNU_INLINE__
 char *ltoa (long __val, char *__s, int __radix)
 {
@@ -512,7 +512,7 @@ char *ltoa (long __val, char *__s, int __radix)
 */
 #ifdef  __DOXYGEN__
 extern char *utoa(unsigned int val, char *s, int radix);
-#else
+#elif __FULL_LIBC__
 extern __inline__ __ATTR_GNU_INLINE__
 char *utoa (unsigned int __val, char *__s, int __radix)
 {
@@ -554,7 +554,7 @@ char *utoa (unsigned int __val, char *__s, int __radix)
 */
 #ifdef  __DOXYGEN__
 extern char *ultoa(unsigned long val, char *s, int radix);
-#else
+#elif __FULL_LIBC__
 extern __inline__ __ATTR_GNU_INLINE__
 char *ultoa (unsigned long __val, char *__s, int __radix)
 {
